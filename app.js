@@ -36,7 +36,9 @@ io.on("connection", (socket) => {
   }
 });
 
-httpServer.listen(PORT);
+httpServer.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 const onDisconnect = (socket) => {
   socket.on("disconnect", (reason) => {
